@@ -1,0 +1,1 @@
+<h1> {{trans('lang_user.mail.mail1')}} <a href="{{ url('/signup') }}">{{trans('lang_user.mail.mail_link')}}</a> {{trans('lang_user.mail.mail2')}}<br> {{trans('lang_user.mail.mail_end')}} {{ $access_code }}</h1>

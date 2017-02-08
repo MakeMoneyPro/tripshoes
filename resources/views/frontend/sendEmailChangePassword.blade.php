@@ -1,0 +1,1 @@
+<h1>Please access this <a href="{{ url('/resetPassword') }}">link</a> to reset your password with access code is <strong>{{ $access_code }}</strong>.</h1>
