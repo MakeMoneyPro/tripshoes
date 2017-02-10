@@ -19,6 +19,7 @@
 			<div class="col-lg-12 text-center">
 				<h1>{{ trans('lang_user.about.the_team') }}</h1>
 				<p> {{ trans('lang_user.about.yes') }}</p>
+				<p> {{ trans('lang_user.about.yes_1') }}</p>
 			</div>
 
 			<div class="col-lg-12 text-center about_us_middle_2">
