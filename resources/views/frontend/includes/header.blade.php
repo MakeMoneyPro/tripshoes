@@ -26,7 +26,7 @@
 				<div class="pull-right">
 					<div class="link">
 						<a href="#" data-toggle="modal" data-target="#signin1">{{ trans('lang_user.header.sign_in') }}</a>
-						<a href="{!! asset('/') !!}"><i class="fa fa-shopping-cart padding_left_10"></i>{{ trans('lang_user.header.cart') }}</a>
+						{{---<a href="{!! asset('/') !!}"><i class="fa fa-shopping-cart padding_left_10"></i>{{ trans('lang_user.header.cart') }}</a>--}}
 					</div>
 				</div>
 				<div class="modal fade" id="signin1" tabindex="-1" role="dialog" aria-labelledby="signin" aria-hidden="true">
@@ -197,10 +197,10 @@
 				@else
 				<div class="link">
 					<ul class="nav-right pull-right list-inline">
-						<li><a href="{{ route('booking.index') }}">{{ trans('lang_user.header.my_booking') }}</a></li>
+						{{--<li><a href="{{ route('booking.index') }}">{{ trans('lang_user.header.my_booking') }}</a></li>
 						<li>
 							<a href="{{ url('/trip1') }}"><i class="fa fa-shopping-cart"></i>{{ trans('lang_user.header.cart') }}<span class="badge">{{ countBooking() }}</span></a>
-						</li>
+						</li>--}}
 						<li class="dropdown pull-right">
 							<a href class="dropdown-toggle" data-toggle="dropdown">
 								@if(Auth::user()->avatar)
