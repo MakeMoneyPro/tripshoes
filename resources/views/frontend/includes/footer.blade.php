@@ -5,7 +5,7 @@
 				<a href="{{ asset('/') }}"><img src="{{ asset('frontend/images/Group3.png') }}"></a>
 				{{ trans('lang_user.footer.trip') }}<span>{{ trans('lang_user.footer.shoes') }}</span>
 			</div>
-			<div class="pull-right footer_right">
+			<div class="pull-right">
 				<ul>
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="#"><i class="fa fa-twitter"></i></a></li>

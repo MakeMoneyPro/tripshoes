@@ -41,16 +41,15 @@
 					  </div>
 					</div>
 				</div>
-				<div class="col-md-7" style="height:420px;">
+				<div class="col-md-7">
 						<div class="col-md-8">
 							<img src="{{ asset('upload/images/'.$image['url'].'') }}" class="img-round" width="100%" height="420px;">
 						</div>
-						<div class="col-md-3" style="height:420px;margin-left:50px;">
+						<div class="col-md-3" style="height:420px;margin-left:50px; align: center">
 							@foreach($images as $item)
-								<img src="{{ asset('upload/images/'.$item->url.'') }}" class="img-round" width="75%" height="23%" style="margin-bottom: 10px;">
+								<img src="{{ asset('upload/images/'.$item->url.'') }}" class="img-round" id="image_right"><br>
 							@endforeach
 						</div>
-
 				</div>
 			</div>
 		</div>
