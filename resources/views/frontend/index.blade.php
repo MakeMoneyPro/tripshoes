@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="trip">
 			<div class="text-center">
-				<div class="col-lg-offset-1 col-lg-10"><h1>{{ trans('lang_user.index.content')}}<br>{{ trans('lang_user.index.content1')}}</h1></div>
+				<div class="col-lg-offset-1 col-lg-10 trip_header"><h1 class="">{{ trans('lang_user.index.content')}}<br>{{ trans('lang_user.index.content1')}}</h1></div>
 				<div class="col-lg-12 info" style="padding:0px;"><p>{{ trans('lang_user.index.content_1')}}</p></div>
 			</div>
 			<div class="col-lg-12 img-round bagia"></div>
@@ -57,6 +57,7 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="remarkable img-round "></div>
+						<button class="btn btn-warning">View Sample Packages</button>
 					</div>
 				</div>
 			</div>
@@ -122,7 +123,7 @@
 			<h1 class="text-center"> {{ trans('lang_user.index.content_26')}}</h1>
 			<p class="text-center">{{ trans('lang_user.index.content_27')}}</p>
 			<div style="width:20%; margin:0 auto;">
-				<button class="btn btn-lg btn-success btn_login" style="width: 200px;">{{ trans('lang_user.index.content_31')}}</button>
+				<button class="btn btn-lg btn-success btn_login" style="width: 200px; align:center">{{ trans('lang_user.index.content_31')}}</button>
 			</div>
 		</div>
 	</div>

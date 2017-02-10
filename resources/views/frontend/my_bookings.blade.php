@@ -18,7 +18,7 @@
 					<a href="{{ route('booking.show',$item->id) }}"><h2 class="text-center"> {{ $item->tourinformations->name }}</h2></a>
 					<p class="text-center">${{number_format((float)$item->tourinformations->price, 2, '.', '')}} | {{$item->tourinformations->time_period}}mins | {{ $item->tourinformations->transport }}</p>
 				</div>
-				
+
 			</div>
 			@endif
 			@endforeach
@@ -38,7 +38,7 @@
 			</div>
 			@endif
 			@endforeach
-		</div>			
+		</div>
 	</div>
 </div>
 @endsection

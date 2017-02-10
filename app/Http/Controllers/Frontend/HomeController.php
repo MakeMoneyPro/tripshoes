@@ -16,8 +16,8 @@ class HomeController extends Controller
     	$banner = '/frontend/images/Image1.png';
 		$text_banner =
 		'<div class="banner-header">
-			<h4>Daily Guided Trips in Hoi An</h4>
-			<h1>Take a trip in <br> someone else\'s shoes</h1>
+      <h5>Conference Package Tours designed to help your company <br> growth</h5>
+			<h1>Life\'s more than just a beach</h1>
 			<a href="#form_send" class="btn btn-lg btn-success page-scroll">Enquire now</a>
 		</div>';
 		/*Mail::send('frontend.sendemail', ['user' => 'hello'], function ($m) {

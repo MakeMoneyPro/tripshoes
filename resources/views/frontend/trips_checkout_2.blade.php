@@ -13,12 +13,11 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="pull-right">
-						<img src="{{ asset('frontend/images/Image20.png') }}" class="showPlay img-rounded"><br>
-						<!-- @if(Auth::user()->avatar)
-							<div class="showPlay" style="background: url({{ asset(config('path.avatar_view').Auth::user()->avatar) }})" class="img-circle img-responsive"></div>
+						@if(Auth::user()->avatar)
+							<img src="{{ asset('frontend/images/Auth::user()->avatar') }}" class="showPlay img-rounded"><br>
 						@else
-							<div class="showPlay" style="background: url({{ asset(config('path.profile_default').Auth::user()->avatar) }})" class="img-circle img-responsive"></div>
-						@endif	 -->
+							<img src="{{ asset(config('path.profile_default')) }}" class="showPlay img-rounded"><br>
+						@endif
 					</div>
 				</div>
 			</div>
@@ -55,8 +54,8 @@
 							<input type="text" name="age" class="form-control form_padding">
 						</div>
 					</div>
-				</div>	
-				
+				</div>
+
 		</div>
 		<div class="btn-group btn_trip2">
 				  	<a href="{{ asset('/trip') }}" class="btn btn-lg-6 btn_addtravel">{{ trans('lang_user.trip.add_traveller') }}</a>
