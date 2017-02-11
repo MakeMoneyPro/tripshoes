@@ -57,7 +57,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'vietphuoc0000@gmail.com', 'name' => 'sourysweb'],
+    'from' => ['address' => env('MAIL_USERNAME'), 'name' => 'Growthtrip'],
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'username' => 'vietphuoc0000@gmail.com',
+    'username' => env('MAIL_USERNAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'password' => 'vietphuoc1234',
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------
