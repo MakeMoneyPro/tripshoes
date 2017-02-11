@@ -6,28 +6,29 @@
 			<div class="text-center">
 				<div class="col-lg-offset-1 col-lg-10 trip_header"><h1 class="">{{ trans('lang_user.index.content')}}<br>{{ trans('lang_user.index.content1')}}</h1></div>
 				<div class="col-lg-12 info" style="padding:0px;"><p>{{ trans('lang_user.index.content_1')}}</p></div>
-			</div>
-			<div class="col-lg-12 img-round bagia"></div>
-			<div class="row" style="color: rgba(149, 165, 166,0.8);">
-				<div class="col-lg-4">
-					<div class="col-lg-3"><img src="{{ asset('frontend/images/Icon1.png')}}"></div>
-					<div class="col-lg-9 align_left">
+			
+				<div class="col-lg-12 img-round bagia"></div>
+				<div class="row" style="color: rgba(149, 165, 166,0.8);">
+					<div class="col-lg-4">
+						<div class="col-lg-3"><img src="{{ asset('frontend/images/Icon1.png')}}"></div>
+						<div class="col-lg-9 align_left">
 
-						<p><strong> {{ trans('lang_user.index.content_2')}}</strong><br>{{ trans('lang_user.index.content_3')}}</p>
+							<p><strong> {{ trans('lang_user.index.content_2')}}</strong><br>{{ trans('lang_user.index.content_3')}}</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="col-lg-3"><img src="{{ asset('frontend/images/Icon2.png')}}"></div>
-					<div class="col-lg-9 align_left">
+					<div class="col-lg-4">
+						<div class="col-lg-3"><img src="{{ asset('frontend/images/Icon2.png')}}"></div>
+						<div class="col-lg-9 align_left">
 
-						<p><strong> {{ trans('lang_user.index.content_4')}}</strong><br>{{ trans('lang_user.index.content_5')}}</p>
+							<p><strong> {{ trans('lang_user.index.content_4')}}</strong><br>{{ trans('lang_user.index.content_5')}}</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="col-lg-3"><img src="{{ asset('frontend/images/Icon3.png')}}"></div>
-					<div class="col-lg-9 align_left">
+					<div class="col-lg-4">
+						<div class="col-lg-3"><img src="{{ asset('frontend/images/Icon3.png')}}"></div>
+						<div class="col-lg-9 align_left">
 
-						<p><strong> {{ trans('lang_user.index.content_6')}}</strong><br>{{ trans('lang_user.index.content_7')}}</p>
+							<p><strong> {{ trans('lang_user.index.content_6')}}</strong><br>{{ trans('lang_user.index.content_7')}}</p>
+						</div>
 					</div>
 				</div>
 			</div>

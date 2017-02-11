@@ -54,7 +54,7 @@
                 
 	        
 	    <div class="just_email"> {{ trans('lang_user.send_us.content_3') }}</div>
-      <div class="info"><u>{{ trans('lang_user.send_us.info') }}</u></div>
+      <div class="info"><a href="mailto:{{ trans('lang_user.send_us.info') }}"><u>{{ trans('lang_user.send_us.info') }}</u></a></div>
 
 </div>
 

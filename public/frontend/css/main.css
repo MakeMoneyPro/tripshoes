@@ -1492,3 +1492,9 @@ select.form-control , input.form-control{
     margin-bottom: 10px;
   }
 }
+
+@media only screen and (max-width: 1024px) {
+	#header.has-banner{
+	  	background-size: 170% !important;
+  	}
+}
