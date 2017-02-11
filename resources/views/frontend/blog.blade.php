@@ -12,7 +12,7 @@
 					<div style="background: url('frontend/images/{{ $item->image }}');width: 100%;height: 200px;background-size: 120%;background-position: -60px -10px;border-top: 1px white;border-radius: 10px 10px 0px 0px;"></div>
 				</a>
 				<div class="blog_text">
-				<h3>{{ $item->name }}</h3>
+				<h3>{{ substr($item->name, 0,20) }}{{ strlen($item->about)>150 ? " ..." : ""}}</h3>
 				<p>{{ substr($item->about, 0,150) }}{{ strlen($item->about)>150 ? " ..." : ""}}</p>
 				</div>
 			</div>

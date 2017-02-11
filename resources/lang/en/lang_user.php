@@ -80,7 +80,7 @@ return [
         'promo_code' => 'Promo Code',
         'close' => 'Close',
         'send_promo_code' => 'Send Promo Code',
-        'specker' => 'Select Additional Speaker',
+        'speaker' => 'Select Additional Speaker',
         'level' => 'Select Accom Level',
         'approx' => 'Approx. cost per delegate. Final price TBC upon enquiry.',
     ],

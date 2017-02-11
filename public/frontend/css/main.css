@@ -1134,7 +1134,7 @@ label{
 }
 .blog_info {
 	height: 350px;
-	margin-bottom: 500px;
+	margin-bottom: 40px;
 }
 .blog_text {
 	background-color:white;
@@ -1420,7 +1420,7 @@ select.form-control , input.form-control{
 /*Responsive*/
 @media only screen and (max-width: 767px) {
   #header.has-banner{
-  	height: 273px;
+  	height: 270px;
   	margin-bottom: 80px;
   	width: 100%;
   }
