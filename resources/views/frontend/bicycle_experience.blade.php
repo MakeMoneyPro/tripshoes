@@ -13,13 +13,12 @@
 			<div class="walking">
 				<div class="row">
 				<div class="col-md-5">
-				 	<h4>{{ strtoupper($tour->transport) }}</h4>
+				 	<h4> | {{ strtoupper($tour->time_period) }} DAYS</h4>
 				 	<h2>{{ $tour->userid->first_name }} {{ $tour->userid->last_name }}'s {{ $tour->transport}}</h2>
 				 	<p>{{ $tour->about }}</p>
 				 	<ul class="nav nav-tabs">
 					  	<li class="active"><a data-toggle="tab" href="#about">{{ trans('lang_user.booking.about') }}</a></li>
-					  	<li><a data-toggle="tab" href="#host">{{ trans('lang_user.booking.your_host') }}</a></li>
-					  	<li><a data-toggle="tab" href="#reviews">{{ trans('lang_user.booking.reviews') }}</a></li>
+					  	<li><a data-toggle="tab" href="#host">{{ trans('lang_user.booking.facilitator') }}</a></li>
 					  	<li ><a data-toggle="tab" href="#locations">{{ trans('lang_user.booking.starting_location') }}</a></li>
 					</ul>
 
@@ -43,11 +42,11 @@
 				</div>
 				<div class="col-md-7">
 						<div class="col-md-8">
-							<img src="{{ asset('upload/images/'.$image['url'].'') }}" class="img-round" width="100%" height="420px;">
+							<img src="{{ asset('frontend/images/'.$image['url'].'') }}" class="img-round" width="100%" height="420px;">
 						</div>
-						<div class="col-md-3" style="height:420px;margin-left:50px; align: center">
+						<div class="col-md-3" style="height:420px;margin-left:40px; align: center">
 							@foreach($images as $item)
-								<img src="{{ asset('upload/images/'.$item->url.'') }}" class="img-round" id="image_right"><br>
+								<img src="{{ asset('frontend/images/'.$item->url.'') }}" class="img-round" id="image_right"><br>
 							@endforeach
 						</div>
 				</div>
@@ -69,6 +68,7 @@
 		        </div>
 				<div class="col-md-3">
 					<select class="form-control form_padding" name="ticket_booking">
+						<option> {{ trans('lang_user.booking.speaker') }}</option>
 						@foreach($ticket as $ticket)
 						<option value="{{ $ticket->id }}">{{ $ticket->name }}</option>
 						@endforeach
@@ -76,6 +76,7 @@
 				</div>
 				<div class="col-md-3">
 					<select class="form-control form_padding" name="number_ticket">
+						<option> {{ trans('lang_user.booking.level') }}</option>
 						@for($i=1;$i<=20;$i++)
 						<option value="{{ $i }}">{{$i}}</option>
 						@endfor
@@ -83,13 +84,13 @@
 				</div>
 			</div>
 
-		<span>${{number_format((float)$tour->price, 2, '.', '')}}</span>
+		<span>${{number_format((float)$tour->price, 2, '.', '')}} {{ trans('lang_user.booking.approx') }}</span>
 		<input type="hidden" name="price" value="{{number_format((float)$tour->price, 2, '.', '')}}">
 		<input type="hidden" name="promo_id" id="promo_id">
 		@if(Auth::check())
 		<div class="button_end">
 			<button type="submit" class="btn btn-lg btn-success">{{ trans('lang_user.booking.add_to_cart') }}</button>
-			<a href="#" class="btn btn-lg btn-default" data-toggle="modal" data-target="#promo_code">{{ trans('lang_user.booking.add_promo_code') }}</a>
+			<!-- <a href="#" class="btn btn-lg btn-default" data-toggle="modal" data-target="#promo_code">{{ trans('lang_user.booking.add_promo_code') }}</a> -->
 		</div>
 		@else
 		<div class="button_end">

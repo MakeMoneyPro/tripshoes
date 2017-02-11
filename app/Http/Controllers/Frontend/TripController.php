@@ -40,8 +40,8 @@ class TripController extends Controller
     	$tourinfos = $this->tourinforepo->with('images')->simplePaginate(4);
         foreach ($tourinfos as $key => $value) {
                 $tourlist[]=$value;
-                $image=$value['images']->first();
-                $tourlist[$key]['image']=$image['url'];
+                $image = $value['images']->first();
+                $tourlist[$key]['image'] = $image['url'];
             }
     	return view('frontend.trips_no_login',compact('tourlist','tourinfos'));
     }
@@ -68,7 +68,7 @@ class TripController extends Controller
     }
 
     public function tripwithlogin(){
-        $tickets = $this->ticketrepo->all(); 
+        $tickets = $this->ticketrepo->all();
         $banner = '';
         $text_banner = '';
         return view('frontend.trips_with_login', compact('banner', 'text_banner', 'tickets'));
