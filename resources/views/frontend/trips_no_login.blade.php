@@ -8,7 +8,7 @@
 	</head>
 	<body>
 
-		<div id="header" class="has-banner" style="background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25) ), url(frontend/images/Depositphotos_12619090_original.jpg) no-repeat; background-size: cover;">
+		<div id="header" class="has-banner" style="background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25) ), url(frontend/images/Image8.png) no-repeat; background-size: cover;">
 			<div class="container">
 				<div class="top">
 					<div class="pull-left">
@@ -194,9 +194,9 @@
 						@else
 							<div class="link">
 					<ul class="nav-right pull-right list-inline">
-						<li><a href="{{ route('booking.index') }}">{{ trans('lang_user.header.my_booking') }}</a></li>
+						<!-- <li><a href="{{ route('booking.index') }}">{{ trans('lang_user.header.my_booking') }}</a></li> -->
 						<li>
-							<a href="{{ url('/trip1') }}"><i class="fa fa-shopping-cart"></i>{{ trans('lang_user.header.cart') }}<span class="badge">{{ countBooking() }}</span></a>
+							<!-- <a href="{{ url('/trip1') }}"><i class="fa fa-shopping-cart"></i>{{ trans('lang_user.header.cart') }}<span class="badge">{{ countBooking() }}</span></a> -->
 						</li>
 
 						<li class="dropdown pull-right">
@@ -242,23 +242,22 @@
 				<div class="border_header"></div>
 				<div class="title-header text-center">
 					<h1>{{ trans('lang_user.header.contact') }}<br> {{ trans('lang_user.header.contact_1') }}</h1>
-					<a href="" class="btn btn-lg">{{ trans('lang_user.header.button') }}</a>
+					<!-- <a href="" class="btn btn-lg">{{ trans('lang_user.header.button') }}</a> -->
 				</div>
 
 
 		</div>
 			<div id="content">
-				<div class="container">
-					<div class="row">
+				<div class="container text-center">
+					<div class="row ">
 						@foreach($tourlist as $item)
 						<div class="col-lg-6 my_booking">
 							<a href="{{ url('/trip/'.$item->id) }}">
-							<div style="background: url(upload/images/{{$item->image}}) no-repeat; background-size:cover;background-position: -140px;" class="tripclass img-rounded">
+							<div style="background: url(frontend/images/{{$item->image}}) no-repeat; background-size:cover;" class="tripclass img-rounded">
 							</div>
 							</a>
-							<h2 class="text-center"> {{ $item->userid->first_name }} {{ $item->userid->last_name }}'s</h2>
 							<a href="{{ url('/trip/'.$item->id) }}"><h2 class="text-center"> {{ $item->name }}</h2></a>
-							<p class="text-center">${{number_format((float)$item->price, 2, '.', '')}} | {{$item->time_period}}mins | {{ $item->transport }}</p>
+							<p class="text-center">| {!! $item->time_period !!}days | from ${{number_format((float)$item->price, 2, '.', '')}} p.p |  {{ $item->transport }}</p>
 						</div>
 						@endforeach
 					</div>
