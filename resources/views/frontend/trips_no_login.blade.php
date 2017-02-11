@@ -257,7 +257,7 @@
 							</div>
 							</a>
 							<a href="{{ url('/trip/'.$item->id) }}"><h2 class="text-center"> {{ $item->name }}</h2></a>
-							<p class="text-center">| {!! $item->time_period !!}days | from ${{number_format((float)$item->price, 2, '.', '')}} p.p |  {{ $item->transport }}</p>
+							<p class="text-center">{!! $item->address !!} | {!! $item->time_period !!}days | from ${{number_format((float)$item->price, 2, '.', '')}} p.p |  {{ $item->transport }}</p>
 						</div>
 						@endforeach
 					</div>

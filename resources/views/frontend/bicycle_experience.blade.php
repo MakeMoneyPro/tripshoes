@@ -13,7 +13,7 @@
 			<div class="walking">
 				<div class="row">
 				<div class="col-md-5">
-				 	<h4> | {{ strtoupper($tour->time_period) }} DAYS</h4>
+				 	<h4> {{ strtoupper($tour->address) }} | {{ strtoupper($tour->time_period) }} DAYS</h4>
 				 	<h2>{{ $tour->userid->first_name }} {{ $tour->userid->last_name }}'s {{ $tour->transport}}</h2>
 				 	<p>{{ $tour->about }}</p>
 				 	<ul class="nav nav-tabs">
