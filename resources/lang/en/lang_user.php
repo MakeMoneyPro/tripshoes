@@ -83,6 +83,8 @@ return [
         'speaker' => 'Select Additional Speaker',
         'level' => 'Select Accom Level',
         'approx' => 'Approx. cost per delegate. Final price TBC upon enquiry.',
+        'delegate' => 'Select No of Delegates',
+        'conference' => 'Select Date of Conference'
     ],
 'about' =>[
         'a_few_words' => 'A few words',
@@ -212,9 +214,12 @@ return [
                           If you haven't had a chance to visit Vietnam, do it now. You won't be disappointed. Whether you're looking to
                           grow innovation, leadership, resilience or sales in your company, now is the time.",
         'content_28' => 'Enquire now',
-        'content_29' => 'When will you be in Hoi An?',
+        'content_29' => 'When is your conference taking place?',
         'content_30' => 'Which trip are you most interested in?',
         'content_31' => 'Enquire',
+        'content_32' => 'How many delegates are attending?',
+        'content_33' => 'Which package are you interested in?',
+        'content_34' => 'Which country are you from?',
         'reset_password' => 'Reset Password',
         'end' => 'Send enquiry',
     ],

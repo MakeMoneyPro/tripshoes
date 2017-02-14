@@ -132,48 +132,21 @@
 		<!-- form -->
 		<div class="col-lg-12 text-center form_send" id="form_send">
 	       	<h1 class="text-center">{{ trans('lang_user.index.content_28')}}</h1>
-	        <div class="col-lg-offset-2 col-lg-8 text-center">
-	            <form class="form_access" method="POST" action="{{ url('/getEarlyAccess') }}">
-                 <div class="row">
-                  <div class="col-lg-6">
-                   <div class="form-group">
-                        <input type="text" name="youname" class="form-control form_padding input-lg" placeholder="Your name" width="100%">
-                    </div>
-                   </div>
-                   <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="email" class="form-control form_padding input-lg" name="email" placeholder="E-mail" width="100%">
-                    </div>
-                   </div>
-                 </div>
-             <div class="row">
-                  <div class="col-lg-6">
-                   <div class="form-group">
-                        <select class="form-control form_padding input-lg">
-                         <option value="">{{ trans('lang_user.index.content_29')}}</option>
-                        </select>
-                    </div>
-                   </div>
-                   <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="email" class="form-control form_padding input-lg" name="email" placeholder="Which country are you from?">
-                    </div>
-                   </div>
-                 </div>
-                 <div class="row">
-                  <div class="col-lg-12">
-                   <div class="form-group">
-                        <select class="form-control form_padding input-lg">
-                         <option value="">{{ trans('lang_user.index.content_30')}}</option>
-                        </select>
-                    </div>
-                   </div>
-                 </div>
-                 <button class="btn btn-lg btn_login col-lg-12 form_padding">{{ trans('lang_user.index.end')}}</button>
-             </form>
+	        <div class="col-lg-offset-1 col-lg-10 text-center">
+	            {!! sendEnquire() !!}
 	        </div>
 	    </div>
 	    <!-- end form -->
 	</div>
 
+@section('script')
+	<script type="text/javascript" src="{{ asset('frontend/js/bootstrap-datepicker.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('frontend/js/bootstrap-timepicker.min.js') }}"></script>
+	<script type="text/javascript">
+        $('#timepicker1').timepicker();
+        $('#datepciker').datepicker({
+        	format: 'dd.mm.yyyy',
+        });
+    </script>
+@endsection
 @endsection
