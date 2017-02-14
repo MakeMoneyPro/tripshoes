@@ -56,30 +56,27 @@
 			<div class="row select_content">
 				<div class="col-md-3">
 					<div class="input-append date" data-date="Select Date">
-					  <input class="form-control form_padding" id="datepciker" size="16" type="text" value="Select Date of Conferentce" name="date_booking">
+					  <input class="form-control form_padding" id="datepciker" size="16" type="text" value="{{ trans('lang_user.booking.conference') }}" name="date_booking">
 					  <span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
 				<div class="col-md-3">
-				<div class="input-group bootstrap-timepicker timepicker">
-		            <input id="timepicker1" type="text" class="form-control form_padding input-small" name="time_booking">
-		            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-		        </div>
+					<select class="form-control form_padding" name="delegates">
+						<option>{{ trans('lang_user.booking.delegate') }}</option>
+						{!! selectDelegates() !!}
+					</select>
 		        </div>
 				<div class="col-md-3">
 					<select class="form-control form_padding" name="ticket_booking">
 						<option> {{ trans('lang_user.booking.speaker') }}</option>
-						@foreach($ticket as $ticket)
-						<option value="{{ $ticket->id }}">{{ $ticket->name }}</option>
-						@endforeach
 					</select>
 				</div>
 				<div class="col-md-3">
 					<select class="form-control form_padding" name="number_ticket">
 						<option> {{ trans('lang_user.booking.level') }}</option>
-						@for($i=1;$i<=20;$i++)
-						<option value="{{ $i }}">{{$i}}</option>
-						@endfor
+						<option value="1-3 stars">1-3 stars</option>
+						<option value="4 stars">4 stars</option>
+						<option value="5 stars">5 stars</option>
 					</select>
 				</div>
 			</div>
