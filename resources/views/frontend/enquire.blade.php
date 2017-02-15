@@ -3,4 +3,5 @@
 <h4>Date Conference: {{ $date_booking }}</h4>
 <h4>Delegate: {{ $delegate }}</h4>
 <h4>Package: {{ $package }}</h4>
-<h4>Country: {{ $country }}</h4>
+<h4>Level: {{ $level }}</h4>
+<h4>Speaker: {{ $speaker }}</h4>

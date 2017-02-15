@@ -1,4 +1,5 @@
 <?php
+use App\Models\TourInformation;
 
 function countBooking(){
     $bookings = App\Models\Booking::where('user_id', Auth::user()->id)
@@ -18,6 +19,7 @@ function selectDelegates(){
 }
 
 function sendEnquire(){
+	$tours = TourInformation::all();
 	$html = "";
 	$html .= '<form class="form_access" method="POST" action=' . url('/getEarlyAccess') . '>
                  <div class="row">
@@ -40,7 +42,7 @@ function sendEnquire(){
                    </div>
                    <div class="col-lg-6">
                     <div class="form-group">
-                        <select class="form-control form_padding input-lg">
+                        <select class="form-control form_padding input-lg" name="delegate">
                          <option value="">' . trans('lang_user.index.content_32') . '</option>' . 
                          selectDelegates() . '
                         </select>
@@ -50,14 +52,19 @@ function sendEnquire(){
                  <div class="row">
                   <div class="col-lg-6">
                    <div class="form-group">
-                        <select class="form-control form_padding input-lg">
-                         <option value="">' . trans('lang_user.index.content_33') . '</option>
-                        </select>
+                        <select class="form-control form_padding input-lg" name="package">
+                         <option value="">' . trans('lang_user.index.content_33') . '</option>';
+
+                     	foreach($tours as $tour){
+                     		$html .= '<option value="' . $tour->name . '">' . $tour->name . '</option>';
+                     	}
+
+                $html .= '</select>
                     </div>
                    </div>
                    <div class="col-lg-6">
                    <div class="form-group">
-                        <select class="form-control form_padding input-lg">
+                        <select class="form-control form_padding input-lg" name="country">
                          <option value="">' . trans('lang_user.index.content_34') . '</option>
                          <option value="USA">USA</option>
                          <option value="Australia">Australia</option>
