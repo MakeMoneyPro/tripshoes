@@ -52,7 +52,8 @@
 				</div>
 			</div>
 		</div>
-		<form action="{{ url('/addtocart/' . $id) }}" method="POST" style="margin-top: 60px;">
+		<form action="{{ url('/enquire') }}" method="POST" style="margin-top: 60px;">
+			<input type="hidden" value="{{ $tour->name }}" name="package">
 			<div class="row select_content">
 				<div class="col-md-3">
 					<div class="input-append date" data-date="Select Date">
@@ -67,12 +68,12 @@
 					</select>
 		        </div>
 				<div class="col-md-3">
-					<select class="form-control form_padding" name="ticket_booking">
+					<select class="form-control form_padding" name="speaker">
 						<option> {{ trans('lang_user.booking.speaker') }}</option>
 					</select>
 				</div>
 				<div class="col-md-3">
-					<select class="form-control form_padding" name="number_ticket">
+					<select class="form-control form_padding" name="level">
 						<option> {{ trans('lang_user.booking.level') }}</option>
 						<option value="1-3 stars">1-3 stars</option>
 						<option value="4 stars">4 stars</option>

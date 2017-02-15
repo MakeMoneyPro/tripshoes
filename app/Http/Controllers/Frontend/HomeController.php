@@ -108,8 +108,21 @@ class HomeController extends Controller
     public function getEarlyAccess(Request $request){
         $youname = $request->get('youname');
         $email = $request->get('email');
+        $date_booking = $request->get('date_booking');
+        $delegate = $request->get('delegate');
+        $package = $request->get('package');
+        $country = $request->get('country');
 
-        Mail::send('frontend.getEarlyAccess', ['youname' => $youname, 'email' => $email], function ($m) use ($email, $youname){
+        $info = array(
+            'youname' => $youname, 
+            'email' => $email,
+            'date_booking' => $date_booking,
+            'delegate' => $delegate,
+            'package' => $package,
+            'country' => $country,
+        );
+
+        Mail::send('frontend.getEarlyAccess', $if, function ($m) use ($email, $youname){
 
             $m->to('vietphuoc0000@gmail.com', 'Viet Phuoc')->subject('Your Reminder!');
         });
