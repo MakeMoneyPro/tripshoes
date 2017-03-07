@@ -87,7 +87,7 @@ class TripController extends Controller
 
         if(Auth::check()){
             $info = array(
-                'youname' => Auth::user()->first_name . ' ' . Auth::user()->last_name, 
+                'youname' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
                 'email' => Auth::user()->email,
                 'date_booking' => $date_booking,
                 'delegate' => $delegate,
@@ -96,13 +96,13 @@ class TripController extends Controller
                 'level' => $level,
             );
 
-            Mail::send('frontend.enquire', $info, function ($m) use ($email, $youname){
+            Mail::send('frontend.enquire', $info, function ($m) {
 
                 $m->to('vietphuoc0000@gmail.com', 'Viet Phuoc')->subject('Enquire');
             });
             return redirect('/trip');
         }
-        
+
         return redirect('/signup');
     }
 }

@@ -6,6 +6,7 @@
 	<h2 class="text-center blog_welcome">{{ trans('lang_user.blog.blog_header') }}</h2>
 	<div class="row">
 		<div class="col-md-12">
+			@if(!empty($tourlist))
 			@foreach($tourlist as $item)
 			<div class="col-md-4 blog_info">
 				<a href="{{ route('blog.article',$item->id) }}">
@@ -18,6 +19,7 @@
 			</div>
 			@endforeach
 			<div class="text-center col-lg-12">{!! $tourinfos->render() !!}</div>
+			@endif
 		</div>
 	</div>
 </div>

@@ -114,7 +114,7 @@ class HomeController extends Controller
         $country = $request->get('country');
 
         $info = array(
-            'youname' => $youname, 
+            'youname' => $youname,
             'email' => $email,
             'date_booking' => $date_booking,
             'delegate' => $delegate,
@@ -122,9 +122,9 @@ class HomeController extends Controller
             'country' => $country,
         );
 
-        Mail::send('frontend.getEarlyAccess', $if, function ($m) use ($email, $youname){
+        Mail::send('frontend.getEarlyAccess', $info, function ($m) use ($email, $youname){
 
-            $m->to('vietphuoc0000@gmail.com', 'Viet Phuoc')->subject('Your Reminder!');
+            $m->to('vietphuoc0000@gmail.com', 'vietphuoc1234')->subject('Your Reminder!');
         });
         return redirect('/');
     }

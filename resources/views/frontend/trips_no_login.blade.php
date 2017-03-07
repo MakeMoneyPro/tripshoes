@@ -250,6 +250,7 @@
 			<div id="content">
 				<div class="container text-center">
 					<div class="row ">
+						@if(!empty($tourlist))
 						@foreach($tourlist as $item)
 						<div class="col-lg-6 my_booking">
 							<a href="{{ url('/trip/'.$item->id) }}">
@@ -262,13 +263,14 @@
 						@endforeach
 					</div>
 					<div class="text-center col-lg-12">{!! $tourinfos->render() !!}</div>
+					@endif
 				</div>
 				<!-- form -->
 				<div class="container">
 				<!-- form -->
 				<div class="col-lg-12 text-center form_send">
 			       	<h1 class="text-center">{{ trans('lang_user.index.content_28')}}</h1>
-			        <div class="col-lg-offset-2 col-lg-10 text-center">
+			        <div class="col-lg-offset-1 col-lg-10 text-center">
 			            {!! sendEnquire() !!}
 			        </div>
 			    </div>

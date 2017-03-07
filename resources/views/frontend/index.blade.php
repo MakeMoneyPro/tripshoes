@@ -6,7 +6,7 @@
 			<div class="text-center">
 				<div class="col-lg-offset-1 col-lg-10 trip_header"><h1 class="">{{ trans('lang_user.index.content')}}<br>{{ trans('lang_user.index.content1')}}</h1></div>
 				<div class="col-lg-12 info" style="padding:0px;"><p>{{ trans('lang_user.index.content_1')}}</p></div>
-			
+
 				<div class="col-lg-12 img-round bagia"></div>
 				<div class="row" style="color: rgba(149, 165, 166,0.8);">
 					<div class="col-lg-4">
