@@ -14,7 +14,7 @@
 				<div class="row">
 				<div class="col-md-5">
 				 	<h4> {{ strtoupper($tour->address) }} | {{ strtoupper($tour->time_period) }} DAYS</h4>
-				 	<h2>{{ $tour->userid->first_name }} {{ $tour->userid->last_name }}'s {{ $tour->transport}}</h2>
+				 	<h2>{{ $tour->name}}</h2>
 				 	<p>{{ $tour->about }}</p>
 				 	<ul class="nav nav-tabs">
 					  	<li class="active"><a data-toggle="tab" href="#about">{{ trans('lang_user.booking.about') }}</a></li>
@@ -92,7 +92,7 @@
 		</div>
 		@else
 		<div class="button_end">
-			<a href="#" class="btn btn-lg btn-warning">{{ trans('lang_user.booking.add_promo_code') }}</a>
+			<a data-toggle="modal" data-target="#signin1" class="btn btn-lg btn-warning">{{ trans('lang_user.booking.add_promo_code') }}</a>
 		</div>
 		@endif
 		</form>
