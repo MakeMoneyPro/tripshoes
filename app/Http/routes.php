@@ -62,5 +62,7 @@ Route::group([ 'namespace' => 'Frontend' ], function () {
 		    'uses' => 'PaypalController@getPaymentStatus',
 		));
 	});
+	Route::get('/login', ['as' => 'login', 'uses' => 'AuthController@getLogin']);
+    Route::post('/login', ['uses' => 'AuthController@PostLoginAdmin']);
+    Route::get('/admin', ['as' => 'admin', 'uses' => 'AuthController@getAdmin']);
 });
-
