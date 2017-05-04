@@ -169,6 +169,14 @@
             <li><a href="#"><i class="fa fa-sliders"></i> {{ trans('lang_admin.list_types') }}</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="{{ route('admin.packages.index') }}">
+            <i class="fa fa-folder"></i> <span>{{ trans('lang_admin.package') }}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
