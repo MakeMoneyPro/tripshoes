@@ -65,4 +65,10 @@ Route::group([ 'namespace' => 'Frontend' ], function () {
 	Route::get('/login', ['as' => 'login', 'uses' => 'AuthController@getLogin']);
     Route::post('/login', ['uses' => 'AuthController@PostLoginAdmin']);
     Route::get('/admin', ['as' => 'admin', 'uses' => 'AuthController@getAdmin']);
+
+
+});
+
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
+    Route::resource('packages', 'PackageController');
 });
