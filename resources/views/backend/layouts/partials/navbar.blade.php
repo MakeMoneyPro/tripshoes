@@ -55,13 +55,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              
+
               <span class="hidden-xs">{{Auth::user()->username}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                
+
                 <p>
                   {{Auth::user()->username}} {{ trans('lang_admin.developer') }}
                   <small>{{ trans('lang_admin.member_signin') }}</small>
@@ -110,7 +110,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          
+
         </div>
         <div class="pull-left info">
           <p>{{Auth::user()->username}}</p>
@@ -171,7 +171,7 @@
         </li>
         <li class="treeview">
           <a href="{{ route('admin.packages.index') }}">
-            <i class="fa fa-folder"></i> <span>{{ trans('lang_admin.package') }}</span>
+            <i class="fa fa-folder"></i> <span>Package</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
