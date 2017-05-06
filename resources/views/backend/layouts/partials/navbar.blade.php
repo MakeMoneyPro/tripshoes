@@ -107,16 +107,6 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-
-        </div>
-        <div class="pull-left info">
-          <p>{{Auth::user()->username}}</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('lang_admin.online') }}</a>
-        </div>
-      </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">{{ trans('lang_admin.title_admin') }}</li>
@@ -124,7 +114,7 @@
           <a href="#"><i class="fa fa-dashboard"></i> <span>{{ trans('lang_admin.dashboard') }}</span></a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="{{ route('admin.user.index') }}">
             <i class="fa fa-users"></i>
             <span>{{ trans('lang_admin.user_manager') }}</span>
             <span class="pull-right-container">
@@ -132,8 +122,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-user"></i> {{ trans('lang_admin.list_users') }}</a></li>
-            <li><a href="#"><i class="fa fa-eye"></i> {{ trans('lang_admin.list_roles') }}</a></li>
+            <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i> {{ trans('lang_admin.list_users') }}</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -145,28 +134,6 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-heart"></i> {{ trans('lang_admin.list_foods') }}</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-hand-rock-o"></i> <span>{{ trans('lang_admin.foods_store_manager') }}</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-institution"></i> {{ trans('lang_admin.list_foods_store') }}</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-folder"></i> <span>{{ trans('lang_admin.type_manager') }}</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-sliders"></i> {{ trans('lang_admin.list_types') }}</a></li>
           </ul>
         </li>
         <li class="treeview">

@@ -33,15 +33,6 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group{{ $errors->has('fullname') ? ' has-error' : '' }}">
-                        <label for="fullname">{{trans('lang_admin_manager_user.fullname')}}</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Fullname" value="{{$list->fullname}}">
-                        @if ($errors->has('fullname'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('fullname') }}</strong>
-                            </span>
-                        @endif
-                    </div>
                     <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                         <label for="address">{{trans('lang_admin_manager_user.address')}}</label>
                         <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="{{$list->address}}">
@@ -51,49 +42,18 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group{{ $errors->has('birthday') ? ' has-error' : '' }}">
-                        <label for="birthday">{{trans('lang_admin_manager_user.birthday')}}</label>
-                        <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birthday" value="{{$list->birthday}}">
-                        @if ($errors->has('birthday'))
+                    <div class="form-group{{ $errors->has('mobile_phone') ? ' has-error' : '' }}">
+                        <label for="mobile_phone">{{trans('lang_admin_manager_user.phone')}}</label>
+                        <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" placeholder="Phone" value="{{$list->mobile_phone}}">
+                        @if ($errors->has('mobile_phone'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('birthday') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                    <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                        <label for="phone">{{trans('lang_admin_manager_user.phone')}}</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="{{$list->phone}}">
-                        @if ($errors->has('phone'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('phone') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                    <div class="form-group{{ $errors->has('information') ? ' has-error' : '' }}">
-                        <label for="information">{{trans('lang_admin_manager_user.information')}}</label>
-                        <textarea type="text" class="form-control" id="information" name="information" placeholder="Information" rows="2" resize="true">{{$list->information}}</textarea>
-                        @if ($errors->has('information'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('information') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                    <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                        <label for="role">{{trans('lang_admin_manager_user.role')}}</label>
-                        <select id="role" name="role" class="form-control">
-                            @foreach($roleuser as $role)
-                                <option value="{{ $role->id }}">{{$role->role}}</option>
-                            @endforeach
-                        </select>
-                        @if ($errors->has('role'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('role') }}</strong>
+                                <strong>{{ $errors->first('mobile_phone') }}</strong>
                             </span>
                         @endif
                     </div>
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         <label for="image">{{trans('lang_admin_manager_user.avatar')}}</label>
-                        <input type="file" id="image" name="image"/>
+                        <input type="file" id="image" name="avatar"/>
                         <img src="{{url(config('path.avatar').$list->avatar)}}" class = "setpicture img-thumbnail" id ="image_no"></img><br>
                     </div>
                     <div class="box-footer">
