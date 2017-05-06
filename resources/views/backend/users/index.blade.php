@@ -26,16 +26,21 @@
                         @foreach($users as $item)
                         <tr>
                             <td>{!! $index++ !!}</td>
-                            <td><a href="#">{{$item->username}}</a></td>
-                            <td>{{$item->fullname}}</td>
+                            <td><a href="#">{{$item->first_name}}</a></td>
+                            <td>{{$item->email}}</td>
                             <td>{{$item->address}}</td>
-                            <td>{{preg_replace('/\d{3}/', '$0-', str_replace('.', null, trim($item->phone)), 2)}}</td>
-                            <td>{{$item->birthday}}</td>
+                            <td>{{preg_replace('/\d{3}/', '$0-', str_replace('.', null, trim($item->mobile_phone)), 2)}}</td>
+                            <td>{{$item->country}}</td>
                             <td>
                                 <a href="{{ route('admin.user.edit',$item ->id)}}"><button class="btn btn-info">{!!trans('lang_admin_manager_user.edit' )!!}</button></a>
                             </td>
                             <td>
-                                <a href="#"><button class="btn btn-danger">{!!trans('lang_admin_manager_user.delete' )!!}</button></a>
+                                {!! Form::open(['route' => ['admin.user.destroy', $item->id], 'method' => 'DELETE', 'class' => 'form-inline']) !!}
+                                {!! Form::button(trans('lang_admin_manager_user.delete'), ['class' => 'btn btn-danger',
+                                'data-toggle' => 'modal','data-target' => '#confirmDelete',
+                                'data-title' => trans('lang_admin_manager_user.title_delete'),
+                                'data-message' => trans('lang_admin_manager_user.confirm')]) !!}
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                         @endforeach
