@@ -5,27 +5,34 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Requests\UserEditRequest;
 use App\Http\Controllers\Controller;
-use App\Repositories\Eloquent\UserRepositoryEloquent;
-use App\Repositories\Eloquent\RoleRepositoryEloquent;
+use App\Repositories\Eloquent\TourInformationRepositoryEloquent;
+use App\Repositories\Eloquent\ImageRepositoryEloquent;
+use App\Repositories\Eloquent\TicketRepositoryEloquent;
+use App\Repositories\Eloquent\BlogDetailRepositoryEloquent;
 use Exception;
-use Session;
 
-class UserController extends Controller
+class TourController extends Controller
 {
-    protected $userrepo;
+    protected $tourinforepo;
+    protected $imagerepo;
+    protected $ticketrepo;
+    protected $blogdetailrepo;
     /**
      * Create a new authentication controller instance.
      *
-     * @param UserRepositoryEloquent $user the user repository
-     * @param RoleRepositoryEloquent $role the user repository
+     * @param TourInformationRepositoryEloquent       $tourinfo      the tourinfo repository
+     * @param ImageRepositoryEloquent       $image      the image repository
+     * @param TicketRepositoryEloquent       $ticket      the ticket repository
      *
      * @return void
      */
-    public function __construct(UserRepositoryEloquent $user)
+    public function __construct(TourInformationRepositoryEloquent $tourinfo, ImageRepositoryEloquent $image, TicketRepositoryEloquent $ticket, BlogDetailRepositoryEloquent $blogdetail)
     {
-        $this->userrepo = $user;
+        $this->tourinforepo = $tourinfo;
+        $this->imagerepo = $image;
+        $this->ticketrepo = $ticket;
+        $this->blogdetailrepo =$blogdetail;
     }
     /**
      * Display a listing of the resource.
@@ -34,8 +41,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users= $this->userrepo->all();
-        return view('backend.users.index', compact('users'));
+        $tourinfos = $this->tourinforepo->with('images')->simplePaginate(6);
+        foreach ($tourinfos as $key => $value) {
+                $tourlist[]=$value;
+                $image=$value['images']->first();
+                $tourlist[$key]['image']=$image['url'];
+            }
+        return view('backend.blogs.index',compact('tourlist','tourinfos'));
     }
 
     /**
@@ -78,11 +90,11 @@ class UserController extends Controller
     public function edit($id)
     {
         try {
-            $list = $this->userrepo->find($id);
-            return view('backend.users.edit', compact('list'));
+             $list = $this->tourinforepo->find($id);
+            return view('backend.blogs.edit', compact('list'));
         } catch (Exception $ex) {
             Session::flash('danger', trans('lang_admin_manager_user.no_id'));
-            return redirect()->route('admin.user.index');
+            return redirect()->route('admin.blogs.index');
         }
     }
 
@@ -94,23 +106,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(UserEditRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-        if ($request->hasFile('avatar')) {
-            $img = $request->file('avatar');
-            $imagename=time() . '_'.$data['name'] .'.'. $img->getClientOriginalExtension();
-            $data['avatar'] = $imagename;
-            $img->move(public_path('images/avatar'), $imagename);
-        }
-        $list = $this->userrepo->find($id);
-        if (empty($list)) {
-            Session::flash('danger', trans('lang_admin_manager_user.danger_edit'));
-        } else {
-            $this->userrepo->update($data, $id);
-            Session::flash('success', trans('lang_admin_manager_user.edit_success'));
-        }
-        return redirect() -> route('admin.user.index');
+        
     }
 
     /**
@@ -118,12 +116,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         try {
-            $count = $this->userrepo->find($id);
+            $count = $this->tourinforepo->find($id);
             if (!empty($count)) {
-                $result = $this->userrepo->delete($id);
+                $result = $this->tourinforepo->delete($id);
                 if ($result) {
                     Session::flash(trans('lang_admin_manager_user.success_cf'), trans('lang_admin_manager_user.delete_success'));
                 } else {
@@ -132,10 +130,10 @@ class UserController extends Controller
             } else {
                 Session::flash(trans('lang_admin_manager_user.danger_cf'), trans('lang_admin_manager_user.delete_fail'));
             }
-            return redirect() -> route('admin.user.index');
+            return redirect() -> route('admin.tour.index');
         } catch (ModelNotFoundException $ex) {
             Session::flash(trans('lang_admin_manager_user.danger_cf'), trans('lang_admin_manager_user.no_id'));
-            return redirect() -> route('admin.user.index');
+            return redirect() -> route('admin.tour.index');
         }
     }
 }

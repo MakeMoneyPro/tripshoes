@@ -38,4 +38,8 @@ return [
     'role' => 'Role',
     'avatar' => 'Avatar',
     'update_user' => 'Update User',
+    'success_cf' => 'success',
+    'delete_success' => 'Delete success',
+    'danger_cf' =>'danger',
+    'delete_fail' => 'Delete not success',
 ];

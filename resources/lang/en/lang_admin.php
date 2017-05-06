@@ -41,8 +41,8 @@ return [
     'statistical' => 'Statistical',
     'user_manager' => 'User Manager',
     'list_users' => 'List Users',
-    'foods_manager' => 'Blog Manager',
-    'list_foods' => 'List blog',
+    'foods_manager' => 'Tour Manager',
+    'list_foods' => 'List tour',
 
     'developer' => ' - Web Developer',
     'copyright' => 'Copyright &copy; 2016-2020',

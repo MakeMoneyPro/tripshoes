@@ -126,14 +126,14 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="{{ route('admin.tour.index') }}">
             <i class="fa fa-meh-o"></i> <span>{{ trans('lang_admin.foods_manager') }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-heart"></i> {{ trans('lang_admin.list_foods') }}</a></li>
+            <li><a href="{{ route('admin.tour.index') }}"><i class="fa fa-heart"></i> {{ trans('lang_admin.list_foods') }}</a></li>
           </ul>
         </li>
         <li class="treeview">
