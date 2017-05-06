@@ -20,7 +20,7 @@
                         @endif
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter package name" value="{{old('name')}}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter package name" value="{{old('name', $package->name)}}">
                             @if ($errors->has('name'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('name') }}</strong>
@@ -33,7 +33,7 @@
                                 <option value="">Choose guide</option>
                                 @if(isset($users))
                                     @foreach($users as $user)
-                                        <option value="{{ $user->id }}">{{ $user->username }}</option>
+                                        <option value="{{ $user->id }}" {!! $user->id == old('guide_id', $package->guide_id) ? 'selected' : '' !!}>{{ $user->username }}</option>
                                     @endforeach
                                 @endif
                             </select>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="input-append date form-group{{ $errors->has('time') ? ' has-error' : '' }}" data-date="Select Date">
                             <label for="time">Select Time</label>
-                            <input type="text" class="form-control" id="time" size="16" value="{{ old('time') }}" name="time">
+                            <input type="text" class="form-control" id="time" size="16" value="{{ old('time', date('Y-m-d', strtotime($package->time))) }}" name="time">
                             <span class="add-on"><i class="icon-th"></i></span>
                         </div>
                         @if ($errors->has('guide_id'))
@@ -59,7 +59,7 @@
                                 <option value="">Choose Place</option>
                                 @if(isset($places))
                                     @foreach($places as $place)
-                                        <option value="{{ $place->id }}">{{ $place->name }}</option>
+                                        <option value="{{ $place->id }}" {!! $place->id == old('place_id', $package->place_id) ? 'selected' : '' !!}>{{ $place->name }}</option>
                                     @endforeach
                                 @endif
                             </select>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" value="{!! old('address')!!}">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" value="{!! old('address', $package->address)!!}">
                             @if ($errors->has('address'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('address') }}</strong>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('lat') ? ' has-error' : '' }}">
                             <label for="lat">Latitude</label>
-                            <input type="number" step="any" class="form-control" id="lat" name="lat" placeholder="Enter latitude" value="{!! old('lat')!!}">
+                            <input type="number" step="any" class="form-control" id="lat" name="lat" placeholder="Enter latitude" value="{!! old('lat', $package->lat)!!}">
                             @if ($errors->has('lat'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('lat') }}</strong>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('lng') ? ' has-error' : '' }}">
                             <label for="lng">Longitude</label>
-                            <input type="number" step="any" class="form-control" id="lng" name="lng" placeholder="Enter longitude" value="{!! old('lng')!!}">
+                            <input type="number" step="any" class="form-control" id="lng" name="lng" placeholder="Enter longitude" value="{!! old('lng', $package->lng)!!}">
                             @if ($errors->has('lng'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('lng') }}</strong>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('time_period') ? ' has-error' : '' }}">
                             <label for="time_period">Time Period</label>
-                            <input type="number" step="any" class="form-control" id="time_period" name="time_period" placeholder="Enter Time Period" value="{{old('time_period')}}">
+                            <input type="number" step="any" class="form-control" id="time_period" name="time_period" placeholder="Enter Time Period" value="{{old('time_period', $package->time_period)}}">
                             @if ($errors->has('time_period'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('time_period') }}</strong>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('transport') ? ' has-error' : '' }}">
                             <label for="transport">Transport</label>
-                            <input type="text" class="form-control" id="transport" name="transport" placeholder="Enter Transport" value="{{old('transport')}}">
+                            <input type="text" class="form-control" id="transport" name="transport" placeholder="Enter Transport" value="{{old('transport', $package->transport)}}">
                             @if ($errors->has('transport'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('transport') }}</strong>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                             <label for="price">Price</label>
-                            <input type="number" step="any" class="form-control" id="price" name="price" placeholder="Price" value="{{old('price')}}">
+                            <input type="number" step="any" class="form-control" id="price" name="price" placeholder="Price" value="{{old('price',$package->price)}}">
                             @if ($errors->has('price'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('price') }}</strong>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
                             <label for="about">About</label>
-                            <textarea class="form-control" id="about" name="about" placeholder="About" rows="2" resize="true">{{old('about')}}</textarea>
+                            <textarea class="form-control" id="about" name="about" placeholder="About" rows="2" resize="true">{{old('about', $package->about)}}</textarea>
                             @if ($errors->has('about'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('about') }}</strong>
@@ -134,7 +134,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('about_tour') ? ' has-error' : '' }}">
                             <label for="about_tour">About</label>
-                            <textarea class="form-control" id="about_tour" name="about_tour" placeholder="About tour" rows="2" resize="true">{{old('about_tour')}}</textarea>
+                            <textarea class="form-control" id="about_tour" name="about_tour" placeholder="About tour" rows="2" resize="true">{{old('about_tour', $package->about_tour)}}</textarea>
                             @if ($errors->has('about_tour'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('about_tour') }}</strong>
@@ -143,7 +143,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('about_guide') ? ' has-error' : '' }}">
                             <label for="about_guide">About</label>
-                            <textarea class="form-control" id="about_guide" name="about_guide" placeholder="About guide" rows="2" resize="true">{{old('about_guide')}}</textarea>
+                            <textarea class="form-control" id="about_guide" name="about_guide" placeholder="About guide" rows="2" resize="true">{{old('about_guide', $package->about_guide)}}</textarea>
                             @if ($errors->has('about_guide'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('about_guide') }}</strong>
