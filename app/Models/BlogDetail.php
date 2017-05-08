@@ -24,6 +24,6 @@ class BlogDetail extends Model implements Transformable
      */
     public function tours()
     {
-        return $this->hasOne('App\Model\BlogDetail', 'tour_information_id');
+        return $this->belongsTo('App\Models\TourInformation', 'tour_information_id');
     }
 }

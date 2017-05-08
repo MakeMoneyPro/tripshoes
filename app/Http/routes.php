@@ -72,4 +72,5 @@ Route::group([ 'namespace' => 'Frontend' ], function () {
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
     Route::resource('packages', 'PackageController');
     Route::resource('user', 'UserController');
+    Route::resource('blog', 'BlogController');
 });
