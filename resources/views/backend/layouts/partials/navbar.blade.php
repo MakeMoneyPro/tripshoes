@@ -91,10 +91,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-success">{{ trans('lang_admin.profile') }}</a>
+                  <a href="{{asset('/profile')}}" class="btn btn-default btn-success">{{ trans('lang_admin.profile') }}</a>
                 </div>
                 <div class="pull-right">
-                  <a href="" class="btn btn-default btn-danger">{{ trans('lang_admin.sign_out') }}</a>
+                  <a href="{{asset('/logout')}}" class="btn btn-default btn-danger">{{ trans('lang_admin.sign_out') }}</a>
                 </div>
               </li>
             </ul>
