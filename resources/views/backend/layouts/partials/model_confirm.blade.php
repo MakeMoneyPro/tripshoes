@@ -9,8 +9,8 @@
                         <p></p>
                     </div> <!-- End Modal Body -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('labels.cancel')}}</button>
-                        <button type="button" class="btn btn-danger" id="confirm">{{trans('labels.delete')}}</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('lang_admin_manager_user.cancel')}}</button>
+                        <button type="button" class="btn btn-danger" id="confirm">{{trans('lang_admin_manager_user.delete')}}</button>
                     </div> <!-- End Modal Footer -->
                 </div> <!-- End Modal Content -->
             </div> <!-- End Modal Dialog -->

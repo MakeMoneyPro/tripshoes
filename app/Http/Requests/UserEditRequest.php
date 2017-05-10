@@ -26,8 +26,8 @@ class UserEditRequest extends Request
         return [
             'username'   => 'required|regex:'.config('define.regex_username').'|max:50|min:3',
             'email'      => 'required|email|min:10|max:100',
-            'address'    => 'required|regex:'.config('define.regex_address').'|max: 100|min:6',
-            'mobile_phone'      => 'required|regex:/^[0-9]*$/i|max: 14|min:10',
+            'address'    => 'regex:'.config('define.regex_address').'|max: 100|min:6',
+            'mobile_phone'      => 'regex:/^[0-9]*$/i|max: 14|min:10',
             'avatar'     => 'mimes:jpeg,jpg,png|max:100',
         ];
     }
