@@ -59,7 +59,7 @@ class PackageController extends Controller
         if($validator->fails()){
             return redirect()->back()->withInput()->withErrors($validator);
         }
-        $tour_guides = $this->tourinfo->findByField('guide_id', $request->get('guide_id'));
+        /*$tour_guides = $this->tourinfo->findByField('guide_id', $request->get('guide_id'));
         $new_time_guide = $request->get('time');
         $new_time_period = $request->get('time_period');
         $new_small_guide = strtotime($new_time_guide ." +" . $new_time_period . " days");
@@ -68,7 +68,7 @@ class PackageController extends Controller
             if(!($new_small_guide < strtotime($time_tour) || $new_time_guide > strtotime($time_tour . " +" . $tour->time_period . " days" ))){
                 return redirect()->back()->withInput()->with('error', 'Guide has been conflicted');
             }
-        }
+        }*/
         $tour = $this->tourinfo->create($request->all());
         if($tour){
             if ($request->hasFile('image')) {
