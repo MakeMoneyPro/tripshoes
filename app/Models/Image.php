@@ -16,6 +16,7 @@ class Image extends Model implements Transformable
      * @var array
      */
     protected $table= 'tbl_image';
+    public $timestamps = false;
     protected $fillable = [
         'tour_information_id', 'url', 
     ];

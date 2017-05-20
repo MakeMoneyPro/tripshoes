@@ -11,4 +11,5 @@ return [
     'pathprofile' => 'profile/avatar',
     'pathpromo' => '/promo',
     'profile_default' => 'frontend/images/profile_default.jpg',
+    'package_image' => public_path().'/frontend/images/'
 ];

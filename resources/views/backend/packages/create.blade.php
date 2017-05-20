@@ -77,7 +77,7 @@
                             </span>
                             @endif
                         </div>
-                        <div class="form-group{{ $errors->has('lat') ? ' has-error' : '' }}">
+                        {{--<div class="form-group{{ $errors->has('lat') ? ' has-error' : '' }}">
                             <label for="lat">Latitude</label>
                             <input type="number" step="any" class="form-control" id="lat" name="lat" placeholder="Enter latitude" value="{!! old('lat')!!}">
                             @if ($errors->has('lat'))
@@ -94,7 +94,7 @@
                                 <strong>{{ $errors->first('lng') }}</strong>
                             </span>
                             @endif
-                        </div>
+                        </div>--}}
                         <div class="form-group{{ $errors->has('time_period') ? ' has-error' : '' }}">
                             <label for="time_period">Time Period</label>
                             <input type="number" step="any" class="form-control" id="time_period" name="time_period" placeholder="Enter Time Period" value="{{old('time_period')}}">
