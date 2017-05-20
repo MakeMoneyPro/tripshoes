@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.users.add');
     }
 
     /**
@@ -53,9 +53,25 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(UserRequest $request)
     {
-        //
+        $data = $request->all();
+        $img = null;
+        if ($request->hasFile('image')) {
+            $img = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image') -> move(config('path.avatar'), $img);
+        }
+        $data['avatar'] = $img;
+        $data['password'] = bcrypt($request->password);
+        $data['birthday'] = date(config('path.formatdate'), strtotime($request->birthday));
+        try {
+            $this->userrepo->create($data);
+            Session::flash(trans('lang_admin_manager_user.success_cf'), trans('lang_admin_manager_user.successful_message'));
+            return redirect()->route('admin.user.index');
+        } catch (Exception $e) {
+            Session::flash(trans('lang_admin_manager_user.danger_cf'), trans('lang_admin_manager_user.error_message'));
+            return redirect()->route('admin.user.create');
+        }
     }
 
     /**
