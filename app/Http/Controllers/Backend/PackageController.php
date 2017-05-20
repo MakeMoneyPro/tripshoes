@@ -47,8 +47,8 @@ class PackageController extends Controller
             'guide_id'      => 'required',
             'time'          => 'required',
             'place_id'      => 'required',
-            'lat'           => 'required',
-            'lng'           => 'required',
+            /*'lat'           => 'required',
+            'lng'           => 'required',*/
             'time_period'   => 'required',
             'transport'  	=> 'required',
             'price' 	    => 'required',
@@ -75,8 +75,8 @@ class PackageController extends Controller
                 $files = $request->file('image');
                 foreach ($files as $file) {
                     $img = time() . $file->getClientOriginalName();
-                    $file-> move('/frontend/images', $img);
-                    $this->imagerepo->create([
+                    $file->move(config('path.package_image'), $img);
+                    $this->imageRepo->create([
                         'url' => $img,
                         'tour_information_id' => $tour->id,
                     ]);
@@ -101,8 +101,8 @@ class PackageController extends Controller
             'guide_id'      => 'required',
             'time'          => 'required',
             'place_id'      => 'required',
-            'lat'           => 'required',
-            'lng'           => 'required',
+            /*'lat'           => 'required',
+            'lng'           => 'required',*/
             'time_period'   => 'required',
             'transport'  	=> 'required',
             'price' 	    => 'required',
@@ -128,16 +128,16 @@ class PackageController extends Controller
         $this->tourinfo->update($data, $id);
 
         if ($request->hasFile('image')) {
-            $imageItem=$this->imagerepo->findByField('tour_information_id', $id);
+            $imageItem=$this->imageRepo->findByField('tour_information_id', $id);
             for ($i=0; $i<count($imageItem); $i++) {
-                $this->imagerepo->delete($imageItem[$i]['id']);
+                $this->imageRepo->delete($imageItem[$i]['id']);
             }
 
             $files = $data['image'];
             foreach ($files as $file) {
                 $img = time() . $file->getClientOriginalName();
-                $file-> move('/frontend/images', $img);
-                $this->imagerepo->create([
+                $file->move(config('path.package_image'), $img);
+                $this->imageRepo->create([
                     'url' => $img,
                     'tour_information_id' => $tour->id,
                 ]);
@@ -150,9 +150,9 @@ class PackageController extends Controller
         try {
             $package = $this->tourinfo->find($id);
             if (!empty($package)) {
-                $imageItem=$this->imagerepo->findByField('tour_information_id', $id);
+                $imageItem=$this->imageRepo->findByField('tour_information_id', $id);
                 for ($i=0; $i<count($imageItem); $i++) {
-                     $this->imagerepo->delete($imageItem[$i]['id']);
+                     $this->imageRepo->delete($imageItem[$i]['id']);
                 }
                 $this->tourinfo->delete($id);
                 return redirect() -> route('admin.packages.index')->with('message', 'Delete Success');
