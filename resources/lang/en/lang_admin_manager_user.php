@@ -38,6 +38,7 @@ return [
     'role' => 'Role',
     'avatar' => 'Avatar',
     'update_user' => 'Update User',
+    'create_user' => 'Create User',
     'title_delete' => 'Delete User',
     'confirm' => 'Do you want delete user?',
     'cancel' => 'Cancel',
