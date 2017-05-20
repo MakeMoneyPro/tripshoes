@@ -53,13 +53,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(UserEditRequest $request)
     {
         $data = $request->all();
         $img = null;
         if ($request->hasFile('image')) {
             $img = time() . '_' . $request->file('image')->getClientOriginalName();
-            $request->file('image') -> move(config('path.avatar'), $img);
+            $request->file('image')->move(config('path.avatar'), $img);
         }
         $data['avatar'] = $img;
         $data['password'] = bcrypt($request->password);

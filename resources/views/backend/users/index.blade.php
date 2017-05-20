@@ -5,7 +5,7 @@
 <div class="row">
 
 	<h2 class="text-left">{{trans('lang_admin_manager_user.user_list')}}
-    <a href="{{ route('admin.packages.create') }}" class="btn btn-primary">Create New User</a>
+    <a href="{{ route('admin.user.create') }}" class="btn btn-primary">Create New User</a>
     </h2><br>
     <div class="box box-success">
     <div class="col-md-12"></div>
