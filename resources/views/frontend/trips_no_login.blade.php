@@ -257,7 +257,12 @@
 							<div style="background: url(frontend/images/{{$item->image}}) no-repeat; background-size:cover;" class="tripclass img-rounded">
 							</div>
 							</a>
-							<a href="{{ url('/trip/'.$item->id) }}"><h2 class="text-center"> {{ $item->name }}</h2></a>
+							<a href="{{ url('/trip/'.$item->id) }}">
+								<div style="width: 60%; margin: 0 auto;">
+									<h2 class="text-center" style="color: rgba(149, 165, 166,1.0);"> {{ $item->name }}
+									</h2>
+								</div>
+							</a>
 							<p class="text-center">{!! $item->address !!} | {!! $item->time_period !!}days |  {{ $item->transport }} | from ${{number_format((float)$item->price, 2, '.', '')}} p.p </p>
 						</div>
 						@endforeach
