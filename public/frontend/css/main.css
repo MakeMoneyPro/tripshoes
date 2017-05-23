@@ -1411,3 +1411,6 @@ select.form-control , input.form-control{
 .red{
 	color: red !important;
 }
+.webname{
+	font-family: 'Open-Sans';
+}
