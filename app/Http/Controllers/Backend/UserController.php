@@ -53,7 +53,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(UserEditRequest $request)
+    public function store(UserRequest $request)
     {
         $data = $request->all();
         $img = null;
@@ -136,6 +136,6 @@ class UserController extends Controller
      */
     public function destroy()
     {
-        
+
     }
 }

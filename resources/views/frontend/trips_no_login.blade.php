@@ -259,7 +259,7 @@
 							</a>
 							<a href="{{ url('/trip/'.$item->id) }}">
 								<div style="width: 60%; margin: 0 auto;">
-									<h2 class="text-center" style="color: rgba(149, 165, 166,1.0);"> {{ $item->name }}
+									<h2 class="text-center" style="color: #777;"> {{ $item->name }}
 									</h2>
 								</div>
 							</a>

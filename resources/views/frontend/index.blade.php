@@ -58,7 +58,9 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="remarkable img-round "></div>
-						<a href="{{ asset('/trip')}}" class="btn btn-lg btn-warning">View Sample Packages</a>
+						<div style="padding-top:40px">
+						<a href="{{ asset('/trip')}}" class="btn btn-lg btn-warning" style="background-color:#ff6633">View Sample Packages</a>
+					</div>
 					</div>
 				</div>
 			</div>
