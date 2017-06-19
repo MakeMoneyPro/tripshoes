@@ -57,7 +57,7 @@
 				        	</div>
 				        	</div>
 				        	<div class="clearfix"></div>
-				        	<input type="submit" value="Sign In" class="btn btn-lg btn-success btn_login">
+				        	<input type="submit" value="Sign In" class="btn btn-success btn_login">
 				        </form>
 				        <a href="{{ url('/sendusemail') }}">{{ trans('lang_user.header.access_code') }}</a>
 				      </div>
@@ -88,7 +88,7 @@
 					        	<div class="form-group">
 					        		<input type="password" class="form-control form_padding" placeholder="Confirm password" name="confirm_password" id="confirm_password">
 					        	</div>
-					        	<input type="submit" value="Submit" class="btn btn-lg btn-success btn_login">
+					        	<input type="submit" value="Submit" class="btn btn-success btn_login">
 					       	</form>
 					      </div>
 
@@ -110,7 +110,7 @@
 						      <div class="modal-footer">
 						      	<div class="pull-right">
 						      		<a href="#" data-toggle="modal" data-target="#signin1" data-dismiss="modal" class="btn btn-lg btn-danger">{{ trans('lang_user.header.back') }}</a>
-						      		<input type="submit" value="Send Email" class="btn btn-success btn-lg" style="background-color: #99CC33; ">
+						      		<input type="submit" value="Send Email" class="btn btn-success" style="background-color: #99CC33; ">
 						      	</div>
 
 						      </div>
@@ -148,7 +148,7 @@
 				        	<div class="form-group">
 				        		<input type="text" class="form-control form_padding" placeholder="Access Code" name="code" id="code">
 				        	</div>
-				        	<input type="submit" value="Get me access" class="btn btn-lg btn-success btn_login">
+				        	<input type="submit" value="Get me access" class="btn btn-success btn_login">
 				       	</form>
 				      </div>
 
@@ -184,7 +184,7 @@
 				        	<div class="form-group">
 				        		<input type="text" class="form-control form_padding" placeholder="Access Code" name="code" id="code">
 				        	</div>
-				        	<input type="submit" value="Get me access" class="btn btn-lg btn-success btn_login">
+				        	<input type="submit" value="Get me access" class="btn btn-success btn_login">
 				       	</form>
 				      </div>
 
