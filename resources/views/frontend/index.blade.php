@@ -46,9 +46,6 @@
 	<div class="container">
 		<div class="app">
 			<div class="row">
-				<div class="col-lg-12">
-					<img src="{{ asset('frontend/images/Icon11.png') }}">
-				</div>
 				<div class="col-lg-12 app_behind">
 					<div class="col-lg-6">
 						<h1>{{ trans('lang_user.index.content_9')}}</h1>

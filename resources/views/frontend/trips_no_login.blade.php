@@ -235,7 +235,7 @@
 
 				</div>
 				<div class="text-center webname">
-					<a href="{{ url('/') }}"><img src="{{ asset('frontend/images/Group3.png') }}"></a>
+					<a href="{{ url('/') }}"><img src="{{ asset('frontend/images/Logo.png') }}"></a>
 					{{ trans('lang_user.header.trip') }}<span>{{ trans('lang_user.header.shoes') }}</span>
 				</div>
 			</div>
@@ -285,7 +285,7 @@
 	<div class="container">
 		<div class="top">
 			<div class="pull-left webname">
-				<a href="{{ asset('/') }}"><img src="{{ asset('frontend/images/Group3.png') }}"></a>
+				<a href="{{ asset('/') }}"><img src="{{ asset('frontend/images/Logo.png') }}"></a>
 				{{ trans('lang_user.footer.trip') }}<span>{{ trans('lang_user.footer.shoes') }}</span>
 			</div>
 			<div class="pull-right">

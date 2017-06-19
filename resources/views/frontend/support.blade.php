@@ -16,7 +16,7 @@
 						<span class="pull-right sign">+</span>
 					</div>
 				</div>
-				
+
 			</li>
 			<li>
 				<div class="row">
@@ -44,7 +44,7 @@
 						<span class="pull-right sign">+</span>
 					</div>
 				</div>
-				
+
 			</li>
 			<li>
 				<div class="row">
@@ -60,5 +60,5 @@
 				</div>
 			</li>
 		</ul>
-				
+
 @endsection

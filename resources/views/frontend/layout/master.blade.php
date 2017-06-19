@@ -3,7 +3,7 @@
 	<head>
 		<title> {{trans('lang_user.souryz')}} @yield('title')</title>
 		<meta charset="utf-8">
-		<link rel="apple-touch-icon" href="{{asset('frontend/images/Group3.png')}}">
+		<link rel="apple-touch-icon" href="{{asset('frontend/images/Logo.png')}}">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ asset('/frontend/css/intlTelInput.css') }}">

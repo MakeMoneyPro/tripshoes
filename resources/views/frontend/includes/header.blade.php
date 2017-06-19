@@ -240,7 +240,7 @@
 
 				</div>
 				<div class="text-center webname">
-					<a href="{{ url('/') }}" style="color:#fff;"><img src="{{ asset('frontend/images/Group3.png') }}">&nbsp;{{ trans('lang_user.header.trip') }}<span>{{ trans('lang_user.header.shoes') }}</span></a>
+					<a href="{{ url('/') }}" style="color:#fff;"><img src="{{ asset('frontend/images/Logo.png') }}">&nbsp;{{ trans('lang_user.header.trip') }}<span>{{ trans('lang_user.header.shoes') }}</span></a>
 
 				</div>
 				{!! $text_banner !!}

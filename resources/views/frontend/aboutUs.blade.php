@@ -24,14 +24,14 @@
 
 			<div class="col-lg-12 text-center about_us_middle_2">
 				<div class="col-lg-4 ">
-					<img src="{{ asset('frontend/images/Image21.png') }}">
+					<img src="{{ asset('frontend/images/Catherine.png') }}">
 					<h3>{{ trans('lang_user.about.name_1') }}</h3>
 					<h4>{{ trans('lang_user.about.middle_1') }}</h4>
 					<h5>{{ trans('lang_user.about.description_1') }}</h5>
 					<h5>{{ trans('lang_user.about.description_1_1') }}</h5>
 				</div>
 				<div class="col-lg-4">
-					<img src="{{ asset('frontend/images/Image22.png') }}">
+					<img src="{{ asset('frontend/images/Tram.png') }}">
 					<h3>{{ trans('lang_user.about.name_2') }}</h3>
 					<h4>{{ trans('lang_user.about.middle_2') }}</h4>
 					<h5>{{ trans('lang_user.about.description_2') }}</h5>
@@ -39,7 +39,7 @@
 					<h5>{{ trans('lang_user.about.description_2_2') }}</h5>
 				</div>
 				<div class="col-lg-4">
-					<img src="{{ asset('frontend/images/Image23.png') }}">
+					<img src="{{ asset('frontend/images/Khoa.png') }}">
 					<h3>{{ trans('lang_user.about.name_3') }}</h3>
 					<h4>{{ trans('lang_user.about.middle_3') }}</h4>
 					<h5>{{ trans('lang_user.about.description_3') }}</h5>
